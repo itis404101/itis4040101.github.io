@@ -308,6 +308,39 @@ class FireworksAnimation {
             }
         });
         
+        // Touch support for mobile
+        this.playground.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const rect = this.playground.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            
+            // Spawn one immediately
+            this.spawnShapeAt(x, y);
+            
+            // Start continuous spawning on touch hold
+            spawnInterval = setInterval(() => {
+                this.spawnShapeAt(x, y);
+            }, 100);
+        });
+        
+        this.playground.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (spawnInterval) {
+                clearInterval(spawnInterval);
+                spawnInterval = null;
+            }
+        });
+        
+        this.playground.addEventListener('touchcancel', (e) => {
+            e.preventDefault();
+            if (spawnInterval) {
+                clearInterval(spawnInterval);
+                spawnInterval = null;
+            }
+        });
+        
         // Start animation
         this.animate();
     }
