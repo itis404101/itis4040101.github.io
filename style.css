@@ -218,3 +218,115 @@ body {
     position: relative;
     z-index: 1;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        touch-action: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .controls {
+        top: 5px;
+        gap: 5px;
+        flex-wrap: wrap;
+        width: calc(100% - 20px);
+        justify-content: center;
+    }
+
+    .controls button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .sliders {
+        top: 45px;
+        gap: 8px;
+        width: calc(100% - 20px);
+    }
+
+    .slider-group {
+        gap: 5px;
+    }
+
+    .slider-group label {
+        font-size: 12px;
+        min-width: 45px;
+    }
+
+    .slider-group input[type="range"] {
+        width: calc(100vw - 180px);
+        flex: 1;
+    }
+
+    .slider-btn {
+        padding: 6px 10px !important;
+        font-size: 14px !important;
+        min-width: 32px !important;
+    }
+
+    .height-slider-group {
+        right: 5px;
+        top: 120px;
+        bottom: 10px;
+        width: 50px;
+    }
+
+    .height-slider-group input[type="range"] {
+        min-height: 80px;
+    }
+
+    .size-display {
+        top: 5px;
+        left: 5px;
+        gap: 3px;
+    }
+
+    .size-display div {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .escape-alert {
+        font-size: 14px;
+        padding: 10px 20px;
+        width: calc(100% - 40px);
+        max-width: 300px;
+    }
+
+    .escape-alert.show {
+        top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .controls button {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .slider-group label {
+        font-size: 11px;
+        min-width: 40px;
+    }
+
+    .slider-group input[type="range"] {
+        width: calc(100vw - 150px);
+    }
+
+    .slider-btn {
+        padding: 5px 8px !important;
+        font-size: 12px !important;
+        min-width: 28px !important;
+    }
+
+    .size-display div {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .height-slider-group {
+        width: 40px;
+    }
+}
